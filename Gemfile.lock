@@ -29,6 +29,8 @@ GEM
       activesupport (= 3.0.5)
     activesupport (3.0.5)
     arel (2.0.9)
+    autotest-rails-pure (4.1.2)
+    autotest-standalone (4.5.5)
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -69,5 +71,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autotest-rails-pure
+  autotest-standalone
   rails (= 3.0.5)
   sqlite3

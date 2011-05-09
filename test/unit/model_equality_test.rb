@@ -11,20 +11,21 @@ class ModelEqualityTest < ActiveSupport::TestCase
     assert new_record != another_new
   end
 
-  test "2 model objects equal when having same ID." do
+  test "2 records with same #id equal to each others." do
     c1 = Comment.create
     c2 = Comment.find(c1.id)
 
-    assert c1.object_id != c2.object_id
     assert c1 == c2
     assert c2 == c1
   end
 
-  test "Same equality rule applies when using Array#include?" do
+  test "When applied in Array" do
     c1 = Comment.create
     c2 = Comment.find(c1.id)
 
     assert [c1].include? c2
     assert [c2].include? c1
+    assert [c1, c2] == [c1, c2]
   end
+
 end
