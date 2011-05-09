@@ -25,4 +25,12 @@ class MassAssignmentTest < ActiveSupport::TestCase
     assert_nil c.content_type
     assert_nil c.author_id
   end
+
+  test "Mass-assignment via #update_attributes" do
+    c = Comment.new
+    c.update_attributes( {:content_type => "spam", :author_id => 99} )
+    
+    assert_nil c.content_type
+    assert_nil c.author_id
+  end
 end
